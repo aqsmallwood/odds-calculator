@@ -16,6 +16,13 @@ export class Calculator extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    let re = /([\+-])(\d\d\d+)/;
+    if (re.exec(this.state.oddsInput) === null) {
+      let error = "Invalid odds format";
+      this.setState({...this.state, error});
+      return
+    }
+
     this.fetchBreakEvenPercentage(this.state.oddsInput);
   }
 
