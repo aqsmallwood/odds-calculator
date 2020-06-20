@@ -22,6 +22,8 @@ namespace odds_calculator.Controllers
         [HttpGet]
         public IActionResult Index(string americanOdds)
         {
+            if (americanOdds == null) return BadRequest("Missing americanOdds query parameter");
+
             var oddsMatcher = new Regex(OddsRegularExpression, RegexOptions.Compiled);
 
             MatchCollection matches = oddsMatcher.Matches(americanOdds);

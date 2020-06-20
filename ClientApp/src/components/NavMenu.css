@@ -1,7 +1,16 @@
-﻿a.navbar-brand {
+﻿header {
+  background-color: rgb(90, 90, 211);
+}
+
+a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+  color: white;
+}
+
+.text-white {
+  color: white;
 }
 
 html {
